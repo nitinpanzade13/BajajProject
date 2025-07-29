@@ -7,3 +7,4 @@ langchain-google-genai
 PyMuPDF
 sentence-transformers==2.2.2
 google-generativeai
+python-dotenv  
