@@ -1,22 +1,20 @@
-import os
 from langchain_community.document_loaders import PyMuPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
-from langchain.prompts import ChatPromptTemplate
-from langchain.schema.runnable import RunnablePassthrough
-from langchain.schema.output_parser import StrOutputParser
-from langchain_google_genai import ChatGoogleGenerativeAI
-import google.generativeai as genai
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain, RetrievalQA
+from langchain_google_genai import ChatGoogleGenerativeAI
+import google.generativeai as genai
+import os
+
 
 
 # Load API Key from file
-# with open("API_KEY.txt", "r") as f:
-#     GEMINI_API_KEY = f.read().strip()
-import os
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+with open("API_KEY.txt", "r") as f:
+    GEMINI_API_KEY = f.read().strip()
+# import os
+# GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 genai.configure(api_key=GEMINI_API_KEY)
 
