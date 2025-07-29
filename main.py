@@ -10,6 +10,10 @@ class RequestPayload(BaseModel):
     documents: str  # URL
     questions: list[str]
 
+@app.get("/")
+def root():
+    return {"status": "API running"}
+
 @app.post("/hackrx/run")
 async def run_api(payload: RequestPayload, authorization: str = Header(None)):
     if not validate_token(authorization):  # ✅ Use your custom validator
