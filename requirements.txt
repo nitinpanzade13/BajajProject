@@ -1,9 +1,9 @@
 fastapi
 uvicorn
 requests
-langchain
+langchain==0.1.16
 langchain-community
 langchain-google-genai
 PyMuPDF
-google-generativeai
 sentence-transformers==2.2.2
+google-generativeai
