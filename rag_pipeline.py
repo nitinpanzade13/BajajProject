@@ -7,14 +7,16 @@ from langchain.chains import LLMChain, RetrievalQA
 from langchain_google_genai import ChatGoogleGenerativeAI
 import google.generativeai as genai
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 
 
-# Load API Key from file
-with open("API_KEY.txt", "r") as f:
-    GEMINI_API_KEY = f.read().strip()
-# import os
-# GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+# # Load API Key from file
+# with open("API_KEY.txt", "r") as f:
+#     GEMINI_API_KEY = f.read().strip()
+import os
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 genai.configure(api_key=GEMINI_API_KEY)
 
