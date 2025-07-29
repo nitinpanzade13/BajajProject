@@ -13,8 +13,10 @@ from langchain.chains import LLMChain, RetrievalQA
 
 
 # Load API Key from file
-with open("API_KEY.txt", "r") as f:
-    GEMINI_API_KEY = f.read().strip()
+# with open("API_KEY.txt", "r") as f:
+#     GEMINI_API_KEY = f.read().strip()
+import os
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 genai.configure(api_key=GEMINI_API_KEY)
 
